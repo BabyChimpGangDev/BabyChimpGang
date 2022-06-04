@@ -1,6 +1,6 @@
 # BabyChimpGang (BCG)
 
-Our one and only oroginal BabyChimpGang NFT collection was released in December 2021. 1111 BabyChimps were minted in under 28 hours, making it one of the most successful NFT drops on the Fantom network at that time. 10% of the profits were donated to charity.
+Our one and only orginal BabyChimpGang NFT collection was released in December 2021. 1111 BabyChimps were minted in under 28 hours, making it one of the most successful NFT drops on the Fantom network at that time. 10% of the profits were donated to charity.
 
 # BabyChimpGangXmas (BCGX)
 
