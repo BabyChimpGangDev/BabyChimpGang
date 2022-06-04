@@ -12,9 +12,9 @@ To make this work we have a public function
 ```solidity
   function claimTickets() public {...}
 ````
-in the respective contracts of each distinct set of Lottery tickes. 
-At call, the function for lottery ticket set $m$ automatically iterates through $id \mod m : \forall id$ in the set of BCG and BCGX token the holders has in her wallet and checks if this id was already claimed. If not set this id to claimed and mint a free chimp to the adress. 
-(using only & \{ id \mod m : \forall $ lottery tikcet sets $m \}$ ensures the mutual exclusion of the claimed chimps in the different lottery tickets sets. This way we don't need to keep track about that in an additional contract or with non-trivial intra contract communication.)
+in the respective contracts of each distinct set of Lottery tickes. \\
+At call, the function for lottery ticket set $m$ automatically iterates through $id \mod m : \forall id$ in the set of BCG and BCGX token the holders has in her wallet and checks if this id was already claimed. If not set this id to claimed and mint a free chimp to the adress. \\
+(using only $ \{ id \mod m : \forall $ lottery tikcet sets $m \}$ ensures the mutual exclusion of the claimed chimps in the different lottery tickets sets. This way we don't need to keep track about that in an additional contract or with non-trivial intra contract communication.)
 
 # Banana Token
 In April 2022 we launched our Banana Token ($BNA), the utility token of BCG, which was airdropped to all BCG NFT holders, no matter which collection. Starting with the 1st of April 2022, holders of our NFTs collections will get $BNA airdropped the same amount every quarter. For more information check out  our Blue Paper in the respective Folder.
