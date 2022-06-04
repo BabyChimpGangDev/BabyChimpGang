@@ -14,8 +14,8 @@ To make this work we have a public function
 ````
 in the respective contracts of each distinct set of Lottery tickes.  
 
-At call, the function for lottery ticket set $m$ automatically iterates through $id \bmod m : \forall id$ in the set of BCG and BCGX token the holders has in her wallet and checks if this id was already claimed. If not set this id to claimed and mint a free chimp to the adress.  
-(using only $ id \bmod m : \forall $ lottery ticket sets $m$ ensures the mutual exclusion of the claimed chimps in the different lottery tickets sets. This way we don't need to keep track about that in an additional contract or with non-trivial intra contract communication.)
+At call, the function for lottery ticket set $0 \leq i < n $ automatically iterates through $ \[ id \mid id \equiv i \pmod{n} \]$ with id in the set of BCG and BCGX token the holders has in her wallet and checks if this id was already claimed. If not set this id to claimed and mint a free lottery ticket of ticket set i to the adress.  
+(using only $ id $ for which hold $id \equiv i \pmod{n} $ for lottery ticket sets $i$ ensures the mutual exclusivity of the claimed chimps in the different lottery tickets sets. So no chimp can be claimed at multiple ticket sets. This way we don't need to keep track about that in an additional contract or with non-trivial intra contract communication.)
 
 # Banana Token
 In April 2022 we launched our Banana Token ($BNA), the utility token of BCG, which was airdropped to all BCG NFT holders, no matter which collection. Starting with the 1st of April 2022, holders of our NFTs collections will get $BNA airdropped the same amount every quarter. For more information check out  our Blue Paper in the respective Folder.
@@ -26,7 +26,20 @@ require(totalSupply() +  amount  <= MAX_TOKENS, 'Would exceed max supply.');
 ```
 to each minting function in the respective Banana Token contract.
 
-
 # BabyChimpGangEvos (BCGE)
-Launching in May 2022, holders of the original BCG collection have the possibility of evolving their BabyChimps into a mutant-apocalyptic style BabyChimp with the same attributes as the original one but in an evolved/mutated way. Half of the collection amount are available for the public mint/non BCG-holders. 
+Launching in May 2022, holders of the original BCG collection have the possibility of evolving their BabyChimps into a mutant-apocalyptic style BabyChimp with the same attributes as the original one but in an evolved/mutated way. Half of the collection amount are available for the public mint/non BCG-holders.
+
+ 
+For the evolution to be smooth we set the evolved chimp of every BCG to the same tokenID. That means when you evolve your BCG Chimo you get the BCGE Chimp with the same tokenID. Functions 
+```solidity 
+function evolveChimp(uint256 id) public payable {...)
+function evolveMultipleChimps(uint256[] calldata id) public payable {...}
+function evolveAllChimps() public payable {...}
+```
+basically check how many chimps of the one chimp, respective an array of chimps, respective all your chimps are not already evolved, and then evolves all the unevolved chimps in the selection, if the payment is $ n * $ MUTATION_PRICE for $ n = $ amount of unevolved chimps in selection. (Note: Of course one can only evolve their chimps and this will be checked in each of these functions.)  
+To get the amount of unevovled chimps n in every selection of id's, the function
+```solidity 
+ function checkEvolve(uint256[] calldata id) external view returns (uint256){...}
+```
+can be used.
 
