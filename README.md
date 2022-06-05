@@ -10,7 +10,7 @@ Around Christmas 2021, in order to give back to the community, we airdropped the
 In April 2022, the BCG Lottery was held. More than 30 prizes, such as NFTs provided by other Fantom projects and BCG merchandise were raffled among ticked holders. The main prizes were the **BabyChimpGangHeroes**, a collection of 5 animated BabyChimps with superpowers. In total there were 5 different sets of tickets, each an NFT collection of their own with their own respective contracts and art on IPFS. Each original BCG or BCGX holder could also claim as many free tickets as she holded BCG or BCGX.
 To make this work we have a public function 
 ```solidity
-  function claimTickets() public {...}
+function claimTickets() public {...}
 ````
 in the respective contracts of each distinct set of Lottery tickes.  
 
