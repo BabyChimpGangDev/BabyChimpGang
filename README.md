@@ -59,3 +59,6 @@ can be used.
 
 [Check out the deployed contract on FTMScan](https://ftmscan.com/address/0x86645fe4975b03c7653eb3010ff78a02acc7acdc)
 
+# RektChimpGang (BCGR)
+
+*coming soon ...*
