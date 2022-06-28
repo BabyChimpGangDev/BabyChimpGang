@@ -61,4 +61,17 @@ can be used.
 
 # RektChimpGang (BCGR)
 
-*coming soon ...*
+For the first time on multichain, RektChimpGang launched for free on FTM and AVAX in the end of June 2022. 
+
+This is also the first time we implemented an onchain lottery mechanism. With the function 
+```solidty
+function fundLottery() public payable {...}
+```
+one can fund the lottery with either FTM or AVAX (depending on chain).
+The a call to function
+```soldity
+function drawLottery() public onlyOwner {...}
+```
+allows the owner to on-chain pseudorandomly select a holder of a Rekt Chimp and send him the previously funded amount in one transaction. 
+
+For the pseudorandomnasly we rely on hashing the block difficulty, the block timestamp, and a counter with keccak256. The counter is very important in that it ensures that even if the function is executed in the same block and therefore timestamp and difficulty is the same, the result won't be the same. (Since the counter increases every time)
