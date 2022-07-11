@@ -64,12 +64,12 @@ can be used.
 For the first time on multichain, RektChimpGang launched for free on FTM and AVAX in the end of June 2022. 
 
 This is also the first time we implemented an onchain lottery mechanism. With the function 
-```solidty
+```solidity
 function fundLottery() public payable {...}
 ```
 one can fund the lottery with either FTM or AVAX (depending on chain).
 The a call to function
-```soldity
+```solidity
 function drawLottery() public onlyOwner {...}
 ```
 allows the owner to on-chain pseudorandomly select a holder of a Rekt Chimp and send him the previously funded amount in one transaction. 
